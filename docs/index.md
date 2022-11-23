@@ -10,13 +10,21 @@
 - Display the unpickled data
 
 Sites I've looked at for researching Python pickle statement
+
 https://www.tutorialspoint.com/python-pickling
+
 https://www.geeksforgeeks.org/understanding-python-pickling-example/
+
 https://www.educba.com/python-pickle/
+
 https://docs.python.org/3/library/pickle.html
+
 https://www.synopsys.com/blogs/software-security/python-pickling/
+
 https://realpython.com/python-pickle-module/  Pretty good, includes tutorial videos, but limited access without paid subscription
+
 https://www.afternerd.com/blog/python-pickle/ A little better than the one above
+
 https://www.digitalocean.com/community/tutorials/python-pickle-example
 
 
