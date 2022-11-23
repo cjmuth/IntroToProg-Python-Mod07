@@ -1,13 +1,13 @@
 # Module07 Website
 
-Get some data
-Display the data
-Pickle the data
-Display pickled data
-Update the data
-Display the updated data
-Unpickle the data
-Display the unpickled data
+- Get some data
+- Display the data
+- Pickle the data
+- Display pickled data
+- Update the data
+- Display the updated data
+- Unpickle the data
+- Display the unpickled data
 
 Sites I've looked at for researching Python pickle statement
 https://www.tutorialspoint.com/python-pickling
@@ -22,3 +22,6 @@ https://www.digitalocean.com/community/tutorials/python-pickle-example
 
 The search results that gave me the stuff listed above
 https://duckduckgo.com/?t=ffab&q=python+pickling&ia=web
+
+https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
+
