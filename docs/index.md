@@ -9,6 +9,9 @@
 - Unpickle the data
 - Display the unpickled data
 
+https://duckduckgo.com/?q=python+exception+handling&t=ffab&ia=web Search results for exception handling
+
+
 Sites I've looked at for researching Python pickle statement
 
 https://www.tutorialspoint.com/python-pickling
