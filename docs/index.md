@@ -1,5 +1,8 @@
 # Module07 Website
 
+Should I add a menu?  Allow the user to make the program try to unpickle a file before it's created?
+
+- Read from a non existent file
 - Get some data
 - Display the data
 - Pickle the data
@@ -8,6 +11,13 @@
 - Display the updated data
 - Unpickle the data
 - Display the unpickled data
+
+
+Sites I've looked at for researching error handling
+
+https://www.geeksforgeeks.org/python-exception-handling/
+
+https://www.tutorialspoint.com/python/python_exceptions.htm
 
 https://duckduckgo.com/?q=python+exception+handling&t=ffab&ia=web Search results for exception handling
 
