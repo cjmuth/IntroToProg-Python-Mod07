@@ -1,0 +1,6 @@
+First thing,High
+Second thing,High
+Thrid thing,High
+Fourth thing,High
+Fifth thing,High
+Last thing,High
