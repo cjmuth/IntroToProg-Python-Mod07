@@ -1,9 +1,11 @@
 # Module07 Website
 
-Should I add a menu?  Allow the user to make the program try to unpickle a file before it's created?
-
-- Read from a non existent file
-- Get some data
+- Open pickle file
+- If file doesn't exist
+  - Catch the exception and notify user
+- If file does exist
+  - Display the data
+- Read in a text file
 - Display the data
 - Pickle the data
 - Display pickled data
