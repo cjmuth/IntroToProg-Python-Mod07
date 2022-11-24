@@ -49,6 +49,7 @@ class Processor:
             pickle_file = open(file_name, 'wb')
             pickle.dump(list_of_rows, pickle_file)
             pickle_file.close()
+            print('Pickling complete.')
         except:
             print('Pickling failed.')
         return list_of_rows
