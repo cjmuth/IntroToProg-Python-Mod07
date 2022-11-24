@@ -47,7 +47,7 @@ class Processor:
     def pickle_file(file_name, list_of_rows):
         try:
             pickle_file = open(file_name, 'wb')
-            list_of_rows = pickle.dump(pickle_file)
+            pickle.dump(list_of_rows, pickle_file)
             pickle_file.close()
         except:
             print('Pickling failed.')
@@ -65,6 +65,7 @@ class Processor:
             unpickle_file = open(file_name, 'rb')
             list_of_rows = pickle.load(unpickle_file, encoding='latin1')
             unpickle_file.close()
+            file_exists = True
         except:
             print(('\nFile {} was not found.\n').format(file_name))
             file_exists = False
@@ -89,7 +90,6 @@ table_list, file_exists_bln = Processor.unpickle_file(file_name=pickle_file_str,
 
 if file_exists_bln:
     print('Displaying data from pickle file.')
-    IO.display_current_data(list_of_rows=table_list)
 else:
     print('Reading data from text file.')
     table_list = Processor.read_data_from_file(file_name=text_file_str, list_of_rows=table_list)
