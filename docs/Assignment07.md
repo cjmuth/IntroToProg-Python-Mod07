@@ -76,7 +76,7 @@ If we take a moment to look at the code for reading the text file, we can see it
 
 ![This is an image](/docs/images/figure05.png)
 
-_**Figure 5: Reading the text file call alternate data source**_
+_**Figure 5: Reading the text file alternate data source**_
 
 Alternatively we could have read it as complete lines, review the data to determine the structure, then develop code to convert that into what we need for processing.  Over time we could develop a list of functions to do the analysis for us, and launch one of several options to convert the data from one format to another.  However, any time we encounter a file with a new structure it would mean having to write new code.  With the pickle module, the file contains all the information the computer needs to extract the data into the format the originator intended.
 
@@ -126,7 +126,7 @@ Opening the file we can see the data is almost human readable, but it is difficu
  
 ![This is an image](/docs/images/figure12.png)
 
-_**Figure 12:  Viewing the contents of ToDoFile.pickle with Pycharm**_
+_**Figure 12: Viewing the contents of ToDoFile.pickle with Pycharm**_
 
 If we run the program again with the pickle file present, we see the program successfully loaded the data and presented it back in much easier to read format. 
 
