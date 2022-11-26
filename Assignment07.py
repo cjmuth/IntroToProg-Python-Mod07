@@ -5,7 +5,7 @@
 #              in "ToDoToDoList.txt" into a python Dictionary.
 #              Add the each dictionary "row" to a python list "table"
 # ChangeLog (Who,When,What):
-# CMuth,11/23/2022,Created script
+# CMuth,11/25/2022,Created script
 # ---------------------------------------------------------------------------- #
 
 from os.path import exists
@@ -17,7 +17,7 @@ pickle_file_str = 'ToDoFile.pickle'
 text_file_str = 'ToDoFile.txt'
 file_exists_bln = None
 table_list = []
-
+choice_str = ''
 
 
 # Processing  --------------------------------------------------------------- #
@@ -45,6 +45,11 @@ class Processor:
 
     @staticmethod
     def pickle_file(file_name, list_of_rows):
+        ''' Saves data in memory to a pickle file
+
+        :param file_name:
+        :param list_of_rows:
+        '''
         try:
             pickle_file = open(file_name, 'wb')
             pickle.dump(list_of_rows, pickle_file)
@@ -52,19 +57,19 @@ class Processor:
             print('Pickling complete.')
         except:
             print('Pickling failed.')
-        return list_of_rows
+
 
     @staticmethod
-    def unpickle_file(file_name, file_exists):
-        """ Reads data from a file into a list of dictionary rows
+    def unpickle_file(file_name):
+        ''' Looks for a pickle file and loads data if present
 
-        :param file_name: (string) with name of file:
-        :return: (list) of dictionary rows
-        """
+        :param file_name:
+        :return: list_of_rows, file_exists
+        '''
         list_of_rows = []
         try:
             unpickle_file = open(file_name, 'rb')
-            list_of_rows = pickle.load(unpickle_file, encoding='latin1')
+            list_of_rows = pickle.load(unpickle_file)
             unpickle_file.close()
             file_exists = True
         except:
@@ -79,23 +84,32 @@ class IO:
 
     @staticmethod
     def display_current_data(list_of_rows):
-        print('********************************************')
+        print('\n********************************************')
         for row in list_of_rows:
-            print(row)
-        print('********************************************')
+            print(('{}  ({})').format(row['Task'],row['Priority']))
+        print('********************************************\n')
 
 
 # Main Body of Script  ------------------------------------------------------ #
 
-table_list, file_exists_bln = Processor.unpickle_file(file_name=pickle_file_str, file_exists=file_exists_bln)
+table_list, file_exists_bln = Processor.unpickle_file(file_name=pickle_file_str)
 
 if file_exists_bln:
-    print('Displaying data from pickle file.')
+    print(('\nDisplaying data from {}').format(pickle_file_str))
 else:
-    print('Reading data from text file.')
-    table_list = Processor.read_data_from_file(file_name=text_file_str, list_of_rows=table_list)
-    print('Displaying data from text file.')
+    choice_str = input(('Do you want to load data from {} instead? (Y/N) ').format(text_file_str))
+    if choice_str.lower() == 'y':
+        print(('Reading data from {}').format(text_file_str))
+        table_list = Processor.read_data_from_file(file_name=text_file_str, list_of_rows=table_list)
+        print(('Displaying data from {}').format(text_file_str))
+    else:
+        exit()
 
 IO.display_current_data(list_of_rows=table_list)
 
-Processor.pickle_file(file_name=pickle_file_str, list_of_rows=table_list)
+choice_str = input('Do you want to pickle this data? (Y/N) ')
+if choice_str.lower() == 'y':
+    Processor.pickle_file(file_name=pickle_file_str, list_of_rows=table_list)
+else:
+    print('Data was not pickled.')
+    exit()
