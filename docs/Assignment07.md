@@ -50,7 +50,7 @@ Serialization is method to convert data to a binary format and save this in a fi
 
 Before we can use any of its functions, we need to import the pickle module - which is simply 
 
-![This is an image](/images/figure01.png)
+![This is an image](/docs/images/figure01.png)
 _**Figure 1: Importing the pickle module**_
 
 
