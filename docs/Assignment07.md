@@ -1,31 +1,35 @@
 Craig Muth
+
 11/26/2022
+
 IT FDN 110 A Au 22: Foundations Of Programming: Python
+
 Assignment 07
+
 https://github.com/cjmuth/IntroToProg-Python-Mod07
 
-Exception Handling and the pickle module
+# Exception Handling and the pickle module
 
-Introduction
+## Introduction
 
 In this project we will create a program that will read from a pickle file if present, and if not, will use an exception handler to prevent it from crashing and provide the user with an option to pull from alternate source.  After the the data has been loaded, the user will be given the option to output to a pickle file.
 
-Designing the program 
+## Designing the program 
 
 For this example we will be using hard coded file names and structuring the code as functions.  The data structure will be the same that was used for previous projects to create a todo list (a list of dictionaries) so we can focus on the new statements.  
 
 Logic for this program can be shown as:
 
-Try to load pickle file
-If file not found
-Catch the exception and notify user
-Provide option to load from text file
-if yes
-Open the text file
-Read the data
-Close the text file
-Display the data
-Else
+- Try to load pickle file
+- If file not found
+  - Catch the exception and notify user
+  - Provide option to load from text file
+  - if yes
+    - Open the text file
+    - Read the data
+    - Close the text file
+    - Display the data
+  - Else
 Exit
 Else
 Open file in binary read mode
@@ -81,9 +85,9 @@ Figure 7: Pickle function
 
 The file can then be passed along to other operators or systems, and as long as they have Python available they can extract it in the original structure without any additional information.
 
-Running the program
+## Running the program
 
-Executing the program in Pycharm:
+### Executing the program in Pycharm:
 
 In order to test the error handling in the unpickle function we delete the pickle file to make sure there’s no file for it to find.
  
@@ -134,7 +138,7 @@ Checking the contents of the new pickle file in a text editor - since we don’t
 
 Figure 16: Viewing the contents of ToDoFile.pickle with TextEdit.app
 
-Summary
+## Summary
 
 In this project we created a simple program to demonstrate exception handling and using the pickle module to create/read output files.  Within the code we identified a file to be loaded by default when the script runs, then intentionally did not provide that file in an attempt to make the program fail.  By using the try…except statement, we prevented the program from crashing and allowed it to tell us what we already knew (that the file did not exist) and give us the option of getting data from a different source.
 
