@@ -51,8 +51,10 @@ Serialization is method to convert data to a binary format and save this in a fi
 Before we can use any of its functions, we need to import the pickle module - which is simply 
 
 ![This is an image](/docs/images/figure01.png)
+
 _**Figure 1: Importing the pickle module**_
 
+![This is an image](/docs/images/figure02.png)
 
 _**Figure 2: Unpickling the data**_
 
@@ -60,16 +62,19 @@ This should work as long as the file exists, but otherwise will cause the progra
 
 However, if we use a try…except statement, we can catch the exception and keep the program running.  If we choose to, we can also return a value to a variable we can use to control the flow of the program, to notify the user and give them the option to pull data from a different source.
 
+![This is an image](/docs/images/figure03.png)
 
 _**Figure 3: Unpickle function**_
 
 The exception statement could have been set up to capture and display the error as reported by the program by writing it as except Exception as ex: then printing the value of ex - I just chose to use my own statement instead.  For reference, if the system statement were reported for this instance it would be [Errno 2] No such file or directory: ‘ToDoFile.pickle’.  In this case the usability of the system message is not much different than the custom message - but that may not be true in all cases, but the programmer has the option to use either depending on which they believe is more useful for their target users.
 
+![This is an image](/docs/images/figure04.png)
 
 _**Figure 4: Calling the unpickle function, and option to call alternate data source**_
 
 If we take a moment to look at the code for reading the text file, we can see it requires more lines of code than the pickle.load - which will help make the code cleaner and easier to maintain.  We can also see that in order to create this function we had to know something about how the data was structured in the file in order to structure it correctly in memory. 
 
+![This is an image](/docs/images/figure05.png)
 
 _**Figure 5: Reading the text file call alternate data source**_
 
@@ -77,11 +82,13 @@ Alternatively we could have read it as complete lines, review the data to determ
 
 Now that the data is in memory, the only operation we’re offering in the example is to save the data back in a pickled format.
 
+![This is an image](/docs/images/figure06.png)
 
 _**Figure 6: Option to pickle or exit without pickling data**_
 
 We can see that the method to write the data to a file is as simple as the method to load.  We provide the data and the file name, and in the background the method will break down the formatting into machine readable data that’s embedded in the output file. 
 
+![This is an image](/docs/images/figure07.png)
 
 _**Figure 7: Pickle function**_
 
@@ -93,31 +100,37 @@ The file can then be passed along to other operators or systems, and as long as 
 
 In order to test the error handling in the unpickle function we delete the pickle file to make sure there’s no file for it to find.
  
+ ![This is an image](/docs/images/figure08.png)
  
 _**Figure 8: Ensuring no pickle file exists**_
 
 When we run the program, it states the file was not found and gives the option to load from the text file instead.
  
+ ![This is an image](/docs/images/figure09.png)
  
 _**Figure 9: Running without the pickle file**_
 
 If we enter Y, the data is read and displayed.  Then selecting to pickle the data we see the following.
 
+![This is an image](/docs/images/figure10.png)
 
 _**Figure 10: Alternate source, and output a pickle file**_
 
 Looking at the Pycharm Project window we can see the file has been created.
 
+![This is an image](/docs/images/figure11.png)
 
 _**Figure 11: Pickle file created**_ 
 
 Opening the file we can see the data is almost human readable, but it is difficult.  Changing the encoding might eliminate the error being reported here - but it would still be impractical (but not impossible) for human use.
  
+![This is an image](/docs/images/figure12.png)
 
 _**Figure 12:  Viewing the contents of ToDoFile.pickle with Pycharm**_
 
 If we run the program again with the pickle file present, we see the program successfully loaded the data and presented it back in much easier to read format. 
 
+![This is an image](/docs/images/figure13.png)
 
 _**Figure 13: Running with the pickle file present**_
 
@@ -129,14 +142,17 @@ So while the data in ToDoFile.pickle didn’t look the same, in contained the in
 
 After deleting the pickle file again, and running the code in a terminal window we see the following interactions:
 
+![This is an image](/docs/images/figure14.png)
 
 _**Figure 14: Running without the pickle file**_
 
+![This is an image](/docs/images/figure15.png)
 
 _**Figure 15: Running with the pickle file**_
 
 Checking the contents of the new pickle file in a text editor - since we don’t see an error message, it appears to be using a different encoding than UTF-8 used in Pycharm, but the text is still quite jumbled.
 
+![This is an image](/docs/images/figure16.png)
 
 _**Figure 16: Viewing the contents of ToDoFile.pickle with TextEdit.app**_
 
